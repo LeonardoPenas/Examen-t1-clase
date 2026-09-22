@@ -20,82 +20,44 @@ public class TrabajoT1 {
       Scanner sc = new Scanner(System.in);
 
 
-        AlumnoController controlador = new AlumnoController();
+        Alumno p= new Alumno();
+        String rpta="s";
+         AlumnoController c= new AlumnoController();
+          System.out.println("Su primer estado del objeto");
+            p.verDatos();
+        while(rpta.equals("s")){
+                  
+            System.out.println("Ingrese el tipo de documento");
+            String tp = sc.nextLine();
+            p.nombre(tp);
 
+            System.out.println("Ingrese el número de documento");
+            String num = sc.nextLine();
+            p.setNro_documento(num);
 
-        String respuesta="s";
+            System.out.println("Ingrese el nombre");
+            String n= sc.nextLine();
+            p.setNombre(n);
 
+            System.out.println("Ingrese apellido paterno");
+            String ap=sc.nextLine();
+            p.setApellido_paterno(ap);
 
-        while(respuesta.equalsIgnoreCase("s")){
+            System.out.println("Ingrese apellido materno");
+            String am=sc.nextLine();
+            p.setApellido_materno(am);
 
-
-            Alumno alumno = new Alumno();
-
-
-
-            System.out.println("\n***** REGISTRO DE ALUMNO *****");
-
-
-            System.out.print("Nombre: ");
-            alumno.setNombre(sc.nextLine());
-
-
-            System.out.print("Apellido: ");
-            alumno.setApellido(sc.nextLine());
-
-
-            System.out.print("Tipo documento: ");
-            alumno.setTipoDocumento(sc.nextLine());
-
-
-            System.out.print("Número documento: ");
-            alumno.setnmrodocuemnto(sc.nextLine());
-
-
-            System.out.print("Nivel socioeconómico (A/B/C): ");
-            alumno.setnivelSocioeconomico(sc.nextLine());
-
-
-            System.out.print("Tipo de beca (Ninguna/Parcial/Total): ");
-            alumno.setTipoBeca(sc.nextLine());
-
-
-            System.out.print("Pensión base: ");
-            alumno.setPensionBase(Double.parseDouble(sc.nextLine()));
-
-
-
-        
-
-            if(alumno.validarDNI() &&
-               alumno.validarNivel() &&
-               alumno.validarBeca()){
-
-
-                controlador.agregarAlumno(alumno);
-
-                System.out.println("\nAlumno registrado correctamente");
-
-
-            }
-            else{
-
-                System.out.println("\nERROR: Datos incorrectos");
-
-            }
-
-
-
-            System.out.print("\n¿Desea registrar otro alumno? s/n: ");
-
-            respuesta=sc.nextLine();
-
-
-        }
-
-
-
-        controlador.listarAlumnos();
+            System.out.println("Ingresar telefono");
+            String nro= sc.nextLine();
+            p.tipoBeca(nro);
+                     
+            c.agregar(p);
+            System.out.println("Desea agregar otra persona: s/n ");
+            rpta=sc.nextLine();
+        }   
+        c.listar();
+       
+    }
 
 
 
