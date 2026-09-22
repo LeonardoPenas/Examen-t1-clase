@@ -10,5 +10,11 @@ package trabajo.t1;
  */
 public class Alumno 
 {
-    
+    private String nombre;
+    private String tipoDocumento;
+    private String nmrodocuemnto;
+    private String nivelSocioEconomico;
+    private String tipoBeca;
+    private double pensionBase;
+    private double pensionFinal;
 }
